@@ -1,0 +1,43 @@
+# PLACEHOLDER VALUES -- seeded from common adult reference ranges, NOT from the doctor's norms doc.
+# Replace min/max before any real use. This file is the single source of truth for the verdict.
+#
+# key=1 -> drives the verdict (OUTSIDE or UNPARSED on such a row => ATTENTION).
+# key=0 -> shown in the report for context, never triggers ATTENTION on its own.
+# Per the doctor: only CBC for now; verdict rests on haemoglobin, leukocytes and their
+# subpopulations, and on ABSOLUTE counts -- percentages are context, not a trigger.
+#
+# Empty min or max = unbounded on that side (e.g. "<= 20" -> min empty, max 20).
+# Empty sex = applies to any sex. aliases are semicolon-separated, matched case-insensitively.
+parameter,unit,min,max,sex,age_min,age_max,key,aliases
+HGB,g/L,130,170,M,,,1,"Гемоглобин;HB;Hemoglobin"
+HGB,g/L,120,150,F,,,1,"Гемоглобин;HB;Hemoglobin"
+WBC,10^9/L,4.0,9.0,,,,1,"Лейкоциты;Leukocytes"
+NEUT#,10^9/L,2.00,7.00,,,,1,"Нейтрофильные гранулоциты;Нейтрофилы;NEUT;NE"
+LYMPH#,10^9/L,1.20,3.00,,,,1,"Лимфоциты;LYMPH;LY"
+MONO#,10^9/L,0.09,0.60,,,,1,"Моноциты;MONO;MO"
+EO#,10^9/L,0.02,0.30,,,,1,"Эозинофилы;EO"
+BASO#,10^9/L,0.00,0.065,,,,1,"Базофилы;BASO"
+IG#,10^9/L,0.00,0.04,,,,1,"Незрелые гранулоциты;IG"
+NEUT%,%,47.0,72.0,,,,0,"Сегментоядерные нейтрофилы;Сегментоядерные;Нейтрофильные гранулоциты"
+NEUT P%,%,1.0,6.0,,,,0,"Палочкоядерные нейтрофилы;Палочкоядерные"
+LYMPH%,%,19.0,37.0,,,,0,"Лимфоциты"
+MONO%,%,3.0,11.0,,,,0,"Моноциты"
+EO%,%,0.5,5.0,,,,0,"Эозинофилы"
+BASO%,%,0.0,1.0,,,,0,"Базофилы"
+IG%,%,0.0,0.5,,,,0,"Незрелые гранулоциты"
+RBC,10^12/L,4.00,5.50,M,,,0,"Эритроциты;Erythrocytes"
+RBC,10^12/L,3.90,4.70,F,,,0,"Эритроциты;Erythrocytes"
+HCT,%,40.0,48.0,M,,,0,"Гематокрит"
+HCT,%,36.0,42.0,F,,,0,"Гематокрит"
+MCV,fL,80.0,100.0,,,,0,"Средний объем эритроцита"
+MCH,pg,27.0,34.0,,,,0,"Средн. сод. гемоглобина в эр-те"
+MCHC,g/L,320,360,,,,0,"Средн. конц. гемоглобина в эр-те"
+RDW-SD,fL,35.0,56.0,,,,0,"RDW SD"
+RDW-CV,%,11.5,14.5,,,,0,"RDW CV;RDW"
+PLT,10^9/L,150,400,,,,0,"Тромбоциты;Platelets"
+MPV,fL,7.4,10.4,,,,0,"Средний объем тромбоцитов"
+PDW,fL,9.3,16.7,,,,0,
+PCT,%,0.12,0.39,,,,0,"Тромбокрит"
+P-LCR,%,17.2,46.3,,,,0,"Коэффициент больших тромбоцитов"
+ESR,mm/h,2,10,M,,,0,"СОЭ;Скорость оседания эритроцитов"
+ESR,mm/h,2,15,F,,,0,"СОЭ;Скорость оседания эритроцитов"

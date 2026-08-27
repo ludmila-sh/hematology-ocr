@@ -1,0 +1,11 @@
+# OCR (images)
+pytesseract
+Pillow
+opencv-python
+
+# PDF with a real text layer -- exact extraction, no OCR
+pdfplumber
+
+# reference table + results
+pandas
+rapidfuzz
